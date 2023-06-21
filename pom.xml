@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <groupId>com.summer</groupId>
+  <artifactId>spring-cloud</artifactId>
+  <version>1.0.0</version>
+  <name>spring-cloud</name>
+  <description>spring-cloud</description>
+  <packaging>pom</packaging>
+
+  <properties>
+    <java.version>17</java.version>
+    <spring-cloud.version>2022.0.2</spring-cloud.version>
+    <spring-cloud-alibaba.version>2022.0.0.0-RC1</spring-cloud-alibaba.version>
+    <spring-boot.version>3.0.0</spring-boot.version>
+
+
+    <spring-cloud-gateway.version>4.0.4</spring-cloud-gateway.version>
+    <spring-cloud-bootstrap.version>3.0.3</spring-cloud-bootstrap.version>
+    <mybatis.version>2.2.2</mybatis.version>
+    <mysql.version>8.0.30</mysql.version>
+    <spring.security.version>5.7.2</spring.security.version>
+    <easyexcel.version>3.1.5</easyexcel.version>
+  </properties>
+
+
+  <dependencyManagement>
+    <dependencies>
+      <!--      Spring-cloud  微服务-->
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!--    spring-cloud-alibaba  微服务-->
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>${spring-cloud-alibaba.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!--      Spring-boot   依赖配置-->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!--      excel工具-->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>easyexcel</artifactId>
+        <version>${easyexcel.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <!--    bootsrap 启动器-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-bootstrap</artifactId>
+      <version>${spring-cloud-bootstrap.version}</version>
+    </dependency>
+  </dependencies>
+
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+  <modules>
+    <module>spring-cloud-web</module>
+    <module>gateway</module>
+  </modules>
+
+
+</project>
