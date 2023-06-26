@@ -93,6 +93,9 @@
     <module>spring-cloud-web</module>
     <module>gateway</module>
     <module>common</module>
+    <module>customer</module>
+    <module>customer</module>
+    <module>web</module>
   </modules>
 
 
